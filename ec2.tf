@@ -46,7 +46,7 @@ data "aws_ami" "ubuntu" {
 resource "aws_instance" "ec2" {
   ami = data.aws_ami.ubuntu.id
   instance_type = var.instance_type
-  key_name = var.ley_pair
+  key_name = var.key_pair
   security_groups = [var.security_group_name]
   tags = {
       Name = var.instance_name
